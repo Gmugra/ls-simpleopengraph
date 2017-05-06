@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<name>
+		<lang name="default">Simple Open Graph</lang>
+	</name>
+	<author>
+		<lang name="default">Gmugra</lang>
+	</author>
+	<homepage>http://mmozg.net</homepage>
+	<version>1.0</version>
+	<requires>
+		<livestreet>1.0.0</livestreet>
+		<plugins>
+		</plugins>
+	</requires>
+	<description>
+		<lang name="default">Generate Open Graph meta</lang>
+	</description>
+</plugin>
