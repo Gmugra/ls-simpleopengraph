@@ -20,6 +20,11 @@ class PluginSimpleopengraph_ModuleTopic_MapperTopic extends PluginSimpleopengrap
 		if (isset($aTopics)) {
 			foreach ($aTopics as $oTopic) {
 				$html = str_get_html($oTopic->getTextShort() );
+
+				$textonly = trim(str_replace(array("\n", "\r"), '', $html->plaintext));
+				$textonly = mb_substr($textonly,0,300);
+				$oTopic->setTextWitoutHtmlSOG($textonly);
+
 				$aImgs = $html->find('img');
 				$sImg = null;
 				if (isset($aImgs) ) {
