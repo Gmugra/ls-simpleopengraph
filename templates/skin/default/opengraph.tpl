@@ -13,9 +13,8 @@
 <meta property="og:image" content="{cfg name='path.root.web'}{cfg name='plugin.simpleopengraph.open_graph_default_image'}" />
 {/if}
 <meta property="article:section" content="{$oTopic->getBlog()->getTitle()|escape:'html'}"/>
-<meta property="article:published_time" content="{$oTopic->getDateAdd()|date_format:"%Y-%m-%dT%H:%M:%S"}"/>
-{$aTags = explode(",",$oTopic->getTags())}
-{foreach from=$aTags item=sTag}
+<meta property="article:published_time" content="{date('c', strtotime($oTopic->getDateAdd()))}"/>
+{foreach from=$oTopic->getTagsArray() item=sTag}
 <meta property="article:tag" content="{$sTag|escape:'html'}" />
 {/foreach}
 {else}
