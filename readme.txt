@@ -10,7 +10,7 @@ http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 INSTALLATION
 1. Rename the folder with the plugin code, it must has name "simpleopengraph".
-2. Copy plain in /plugins/ directory.
+2. Copy the plugin in /plugins/ directory.
 3. Using plugins managment (/admin/plugins/) to activate it.
 
 ------------------------------------------------------------------------------------------
