@@ -1,10 +1,10 @@
 <meta property="og:site_name" content="{cfg name='view.name'}"/>
 <meta property="og:locale" content="ru_RU" />
-<meta property="og:title" content="{$sHtmlTitle}" />
+<meta property="og:title" content="{$sHtmlTitle|escape:'html'}" />
 <meta property="og:url" content="{$sHtmlCanonical}" />
 {if isset($oTopic)}
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="{$oTopic->getTextWitoutHtmlSOG()}"/>
+<meta property="og:description" content="{$oTopic->getTextWitoutHtmlSOG()|escape:'html'}"/>
 {if Config::Get('plugin.simpleopengraph.use_mainpreview') == true && class_exists("PluginMainpreview") && $oTopic->getPreviewImageWebPath() != null }
 <meta property="og:image" content="{$oTopic->getPreviewImageWebPath()}" />
 {elseif $oTopic->getFirstImageSOG() != null }

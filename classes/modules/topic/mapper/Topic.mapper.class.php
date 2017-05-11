@@ -33,9 +33,31 @@ class PluginSimpleopengraph_ModuleTopic_MapperTopic extends PluginSimpleopengrap
 						$sImg = $oImg->src;
 					}
 				}
+				if (!isset($sImg) ) {
+					$aIframes = $html->find('iframe');
+					if (isset($aIframes) ) {
+						$oIframe = reset($aIframes );
+						if (is_object($oIframe)) {
+							$sSrc = $oIframe->src;
+							if (stripos($sSrc, 'youtube.com/') !== false) {
+								$spos = strrpos($sSrc, '/');
+								$qpos = strpos($sSrc, '?');
+								$id = null;
+								if ($qpos === false) {
+									$id = substr($sSrc, $spos + 1);
+								} else {
+									$id = substr($sSrc, $qpos - $spos);
+								}
+								$sImg = "https://img.youtube.com/vi/".$id."/0.jpg";	
+							}
+						}
+					}
+				}
 				if (isset($sImg) ) { 
 					$oTopic->setFirstImageSOG($sImg); 
 				}
+				
+				$html->clear();
 			}
 		}
 
