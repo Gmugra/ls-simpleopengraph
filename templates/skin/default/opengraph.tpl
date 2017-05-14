@@ -1,12 +1,14 @@
 <meta property="og:site_name" content="{cfg name='view.name'}"/>
 <meta property="og:locale" content="ru_RU" />
 <meta property="og:title" content="{$sHtmlTitle|escape:'html'}" />
-<meta property="og:url" content="{$sHtmlCanonical}" />
+<meta property="og:url" content="{Router::GetPathWebCurrent()}" />
 {if isset($oTopic)}
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="{$oTopic->getTextWitoutHtmlSOG()|escape:'html'}"/>
 {if Config::Get('plugin.simpleopengraph.use_mainpreview') == true && class_exists("PluginMainpreview") && $oTopic->getPreviewImageWebPath() != null }
 <meta property="og:image" content="{$oTopic->getPreviewImageWebPath()}" />
+{elseif $oTopic->getPhotosetMainPhoto() && $oTopic->getPhotosetMainPhoto()->getWebPath('middle') }
+<meta property="og:image" content="{$oTopic->getPhotosetMainPhoto()->getWebPath('middle')}" />
 {elseif $oTopic->getFirstImageSOG() != null }
 <meta property="og:image" content="{$oTopic->getFirstImageSOG()}" />
 {elseif Config::Get('plugin.simpleopengraph.open_graph_default_image')}
