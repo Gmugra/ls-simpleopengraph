@@ -19,7 +19,18 @@ class PluginSimpleopengraph_ModuleTopic_MapperTopic extends PluginSimpleopengrap
 
 		if (isset($aTopics)) {
 			foreach ($aTopics as $oTopic) {
-				$html = str_get_html($oTopic->getTextShort() );
+				
+				$source = $oTopic->getTextShort();
+				if ($source == null) {
+					$source = $oTopic->getText();
+				}
+				
+				$source = str_replace("<cut>", "", $source);
+				
+				$html = str_get_html($source);
+				if (!isset($html) || $html->plaintext == null ) {
+					continue;
+				}
 
 				$textonly = trim(str_replace(array("\n", "\r"), '', $html->plaintext));
 				$textonly = mb_substr($textonly,0,300);

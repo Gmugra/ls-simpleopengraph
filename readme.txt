@@ -1,5 +1,5 @@
 Plugin "Simple Open Graph" for LiveStreet CMS 1.0.X
-Actual plugin version: 1.32
+Actual plugin version: 1.33
 
 Plugin add Open Graph metadata.
 More Info: http://ogp.me/
@@ -15,7 +15,7 @@ INSTALLATION
 
 ------------------------------------------------------------------------------------------
 Плагин "Simple Open Graph" для LiveStreet CMS 1.0.X
-Текущая версия плагина: 1.32
+Текущая версия плагина: 1.33
 
 Плагин разработан для и используется на сайте ММОзговед (http://mmozg.net).
 

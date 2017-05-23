@@ -7,7 +7,7 @@
 		<lang name="default">Gmugra</lang>
 	</author>
 	<homepage>http://mmozg.net</homepage>
-	<version>1.0</version>
+	<version>1.33</version>
 	<requires>
 		<livestreet>1.0.0</livestreet>
 		<plugins>

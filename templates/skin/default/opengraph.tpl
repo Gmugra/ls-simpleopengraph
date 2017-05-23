@@ -4,7 +4,11 @@
 <meta property="og:url" content="{Router::GetPathWebCurrent()}" />
 {if isset($oTopic)}
 <meta property="og:type" content="article"/>
+{if $oTopic->getTextWitoutHtmlSOG() != null }
 <meta property="og:description" content="{$oTopic->getTextWitoutHtmlSOG()|escape:'html'}"/>
+{else}
+<meta property="og:description" content="{$sHtmlDescription}"/>
+{/if}
 {if $oTopic->getFinalImageSOG() != null }
 <meta property="og:image" content="{$oTopic->getFinalImageSOG()}"/>
 {/if}
